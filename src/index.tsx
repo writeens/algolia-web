@@ -9,6 +9,7 @@ import './styles/components/Results.css';
 import './styles/components/RestaurantCardItem.css';
 import './styles/components/DeleteModal.css';
 import './styles/components/NewRestaurantModal.css';
+import './styles/components/EmptyState.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

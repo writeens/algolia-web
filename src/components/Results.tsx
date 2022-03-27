@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Hits, HitsPerPage, Pagination, Stats,
 } from 'react-instantsearch-dom';
+import EmptyState from './EmptyState';
 import RestaurantCardItem from './RestaurantCardItem';
 
 const Results = () => (
@@ -24,6 +25,7 @@ const Results = () => (
       />
     </header>
     <div className="results-section-content">
+      <EmptyState />
       <Hits hitComponent={RestaurantCardItem} />
     </div>
     <footer className="results-section-pagination">
