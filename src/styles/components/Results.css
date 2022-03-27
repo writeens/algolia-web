@@ -1,0 +1,86 @@
+/** RESULTS SECTION */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.results-section__header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.results-section__header .ais-Stats-text {
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+}
+.results-section__header .ais-HitsPerPage-select {
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+    outline: none;
+    padding: 0.25rem;
+    border: 1px solid #DDE2E4;
+    border-radius: 6px;
+}
+
+/**RESULTS CONTENT CONTAINER**/
+.results-section-content .ais-Hits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.9rem;
+    margin-bottom: 2rem;
+}
+
+/**PAGINATION**/
+.results-section-pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.results-section-pagination .ais-Pagination-link {
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+    padding: 0.3rem 0.6rem;
+    margin: 0rem 0.3rem;
+    background: var(--paginationBackgroundColor);
+    border: 1px solid #DDDDDD;
+    box-shadow: 0px 3px 2px -2px rgba(0, 0, 0, 0.06), 0px 5px 3px -2px rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+}
+.results-section-pagination .ais-Pagination-link--selected {
+    background-color: var(--paginationBackgroundSelectedColor);
+    color: var(--textColorLight);
+}
+
+@media (max-width: 1024px) {
+    .results-section-content .ais-Hits-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
+@media (max-width: 768px) {
+    .results-section-content .ais-Hits-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .results-section-content .ais-Hits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .results-section > header .ais-Stats-text {
+        font-size: var(--fontSizeSmall)
+    }
+    .results-section > header .ais-HitsPerPage-select {
+        font-size: var(--fontSizeXtraSmall);
+        padding: 0.1rem;
+    }
+
+} 

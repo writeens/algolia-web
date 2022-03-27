@@ -45,10 +45,10 @@ h2, p {
 
 /**MAIN CONTAINER**/
 .main-container{
-margin: 0 auto;
-max-width: 1300px;
-padding-left: 3rem;
-padding-right: 3rem;
-display: flex;
-position: relative;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  position: relative;
 }

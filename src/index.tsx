@@ -4,6 +4,8 @@ import './styles/index.css';
 import './styles/components/Navbar.css';
 import './styles/components/Banner.css';
 import './styles/components/Filters.css';
+import './styles/components/Results.css';
+import './styles/components/RestaurantCardItem.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

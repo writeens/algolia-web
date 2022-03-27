@@ -1,0 +1,144 @@
+/**RESTAURANT CARD ITEM**/
+.restaurant-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    background-color: var(--cardBackgroundColor);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    height: 100%;
+    padding: 0.2rem 0.4rem 0.8rem 0.4rem;
+    position: relative;
+}
+
+.restaurant-item-image{
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.restaurant-item:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+.restaurant-item__header{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    margin-bottom: 0.2rem;
+    padding: 1rem 1rem 0.3rem 1rem;
+}
+.restaurant-item .delete-button{
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: -0.1rem;
+    top: 0.2rem;
+}
+.restaurant-delete-icon {
+    width: 16px;
+    height: 16px;
+    fill:var(--deleteIconColor);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.restaurant-delete-icon:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+.restaurant-item-body {
+    /* padding: 0.6rem 0.75rem 0.3rem 0.75rem; */
+    /* padding: 0.6rem 0.75rem; */
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
+.restaurant-item-body .ais-Highlight {
+    margin-bottom: 0.2rem;
+}
+.restaurant-item-body .ais-Highlight:nth-child(1) .ais-Highlight-nonHighlighted, 
+.restaurant-item-body .ais-Highlight:nth-child(1) .ais-Highlight-highlighted{
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+    margin-bottom: 0.2rem;
+}
+.restaurant-item-body .ais-Highlight:nth-child(2) .ais-Highlight-nonHighlighted, 
+.restaurant-item-body .ais-Highlight:nth-child(2) .ais-Highlight-highlighted{
+    font-size: var(--fontSizeLarge);
+    font-weight:  var(--fontWeightSemiBold);
+    color: var(--textColorNormal);
+}
+.restaurant-item-body mark {
+    background-color: var(--textHighlightColor)
+}
+
+.restaurant-item-body .restaurant-item-body__price-text {
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+    margin-bottom: 0.2rem;
+}
+
+/**RESTAURANT STARS**/
+.restaurant-star{
+    fill:#F8C51B;
+}
+.restaurant-star-body{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.restaurant-star-body__text {
+    font-size: var(--fontSizeXtraSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+}
+
+@media (max-width: 1024px) {
+    /**RESTAURANT**/
+    .restaurant-item:hover{
+        transform: none;
+    }
+    .restaurant-delete-icon:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 640px){
+    .restaurant-item {
+        max-width: none;
+        margin-bottom: 1rem;
+        flex-direction: row;
+        align-items: center;
+        padding: 0rem;
+    }
+    .restaurant-item__header{
+        padding: 0;
+        width: 150px;
+        height: 150px;
+        margin: 0;
+    }
+    .restaurant-item-body{
+        text-align: left;
+        align-items: flex-start;
+        padding-left: 1rem;
+        flex: 1;
+    }
+    .restaurant-item .delete-button{
+        border: none;
+        background: transparent;
+        position: absolute;
+        right: 0.2rem;
+        top: 0.5rem;
+    }
+}
