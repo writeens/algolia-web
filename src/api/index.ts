@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { IRestaurantObject } from '../interfaces';
 
 // DELETE AN OBJECT FROM THE INDEX
@@ -18,7 +17,6 @@ export const deleteObject = async (objectId:string) => {
       return false;
     }
 
-    const response = await raw.json();
     return true;
   } catch (error) {
     return false;
@@ -43,7 +41,6 @@ export const addObject = async (object:IRestaurantObject) => {
       return false;
     }
 
-    const response = await raw.json();
     return true;
   } catch (error) {
     return false;
