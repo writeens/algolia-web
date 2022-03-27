@@ -1,4 +1,3 @@
-
 /**FONT & COLOR**/
 :root{
   --fontFamily: 'Inter', sanserif;
@@ -38,4 +37,18 @@ h2, p {
 
 ::placeholder{
   color: var(--textColorNormal);
+}
+/**APP CONTAINER**/
+.app-container {
+  background-color: var(--backgroundColor)
+}
+
+/**MAIN CONTAINER**/
+.main-container{
+margin: 0 auto;
+max-width: 1300px;
+padding-left: 3rem;
+padding-right: 3rem;
+display: flex;
+position: relative;
 }
