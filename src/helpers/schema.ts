@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import * as Yup from 'yup';
+import { phoneRegExp } from './util';
 
 export const newRestaurantSchema = Yup.object({
   name: Yup.string().required('Please provide a name for your restaurant'),
