@@ -25,7 +25,7 @@ const Navbar = () => {
               <g fill="#ffffff"><path d="M82.56,30.96v51.6h-51.6v6.88h51.6v51.6h6.88v-51.6h51.6v-6.88h-51.6v-51.6z" /></g>
             </g>
           </svg>
-          <span>New Restaurant</span>
+          <span>Add a Restaurant</span>
         </button>
       </nav>
       <NewRestaurantModal
