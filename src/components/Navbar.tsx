@@ -20,9 +20,9 @@ const Navbar = () => {
         <button type="button" className="navbar-button" onClick={() => setModalIsOpen(true)}>
           <svg className="navbar-plus" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172">
             <title>Add New Restaurant Icon</title>
-            <g fill="none" fillRule="nonzero" stroke="none" strokeWidth="2" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="inter" fontWeight="none" fontSize="none" textAnchor="none">
+            <g fill="none" fillRule="nonzero" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="inter" fontWeight="none" fontSize="none" textAnchor="none">
               <path d="M0,172v-172h172v172z" fill="none" />
-              <g fill="#ffffff"><path d="M82.56,30.96v51.6h-51.6v6.88h51.6v51.6h6.88v-51.6h51.6v-6.88h-51.6v-51.6z" /></g>
+              <g stroke="white" strokeWidth={14} fill="#ffffff"><path d="M82.56,30.96v51.6h-51.6v6.88h51.6v51.6h6.88v-51.6h51.6v-6.88h-51.6v-51.6z" /></g>
             </g>
           </svg>
           <span>Add a Restaurant</span>
