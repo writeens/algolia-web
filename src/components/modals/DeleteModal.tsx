@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import Modal from 'react-modal';
+import { deleteObject } from '../../api';
 import { IDeleteModalProps } from '../../interfaces';
+import { showError, showSuccess } from '../Notification';
 
 const DeleteModal = ({
   name, objectId, modalIsOpen, closeModal,
@@ -13,7 +15,22 @@ const DeleteModal = ({
   };
 
   const handleDeleteRestaurant = async () => {
-
+    setIsDeleting(true);
+    const isDeleted = await deleteObject(objectId);
+    setIsDeleting(false);
+    if (!isDeleted) {
+      // HANDLE RESTAURANT COULD NOT BE DELETED - EARLY RETURN
+      showError({
+        title: 'Sorry',
+        message: 'Looks like we were unable to remove your restaurant. Please try again later.',
+      });
+      return;
+    }
+    showSuccess({
+      title: 'Hooray',
+      message: 'Your restaurant has been removed successfully.',
+    });
+    closeModal();
   };
 
   return (
