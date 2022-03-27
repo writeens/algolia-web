@@ -1,0 +1,41 @@
+/**DELETE MODAL STYLES**/
+.delete-modal-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-modal-title{
+    font-size: var(--fontSizeLarge);
+    font-weight:  var(--fontWeightSemiBold);
+    color: var(--textColorNormal);
+    margin-bottom: 1.2rem;
+}
+
+.delete-modal-desc{
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    color: var(--textColorNormal);
+}
+.delete-modal-body {
+    margin-bottom: 1rem;
+}
+.delete-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.button-cancel {
+    border-radius: var(--buttonRadius);
+    padding: var(--buttonPadding);
+    color: var(--textColorNormal);
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-right: 0.8rem;
+}
+.button-delete {
+    border-radius: var(--buttonRadius);
+    padding: var(--buttonPadding);
+    color: var(--textColorLight);
+    background-color: #ee243c;
+    color: white;
+    border: none;
+}

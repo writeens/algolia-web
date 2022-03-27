@@ -26,3 +26,10 @@ export interface IRestaurantObject {
     dining_style:string,
     rounded_stars_count:number
   }
+
+export interface IDeleteModalProps {
+    name:string,
+    objectId:string,
+    modalIsOpen: boolean
+    closeModal:Function
+}
