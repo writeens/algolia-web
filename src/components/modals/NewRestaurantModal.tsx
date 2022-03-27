@@ -238,7 +238,7 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
           <TextField
             label="Restaurant Image URL"
             id="url"
-            type="text"
+            type="url"
             value={formValues.url}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -256,7 +256,7 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
             error={touched.spend && Boolean(errors.spend) ? errors.spend : ''}
           />
           <TextField
-            label="Food Type"
+            label="Cuisine Type (e.g American, Thai)"
             id="foodType"
             type="text"
             value={formValues.foodType}
@@ -266,7 +266,7 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
             error={touched.foodType && Boolean(errors.foodType) ? errors.foodType : ''}
           />
           <TextField
-            label="Star Count"
+            label="Rating (1 - 5)"
             id="starCount"
             type="number"
             value={formValues.starCount}
@@ -277,7 +277,7 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
             error={touched.starCount && Boolean(errors.starCount) ? errors.starCount : ''}
           />
           <TextField
-            label="Review Count"
+            label="Number of reviews"
             id="reviewCount"
             type="number"
             value={formValues.reviewCount}
@@ -287,7 +287,7 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
             error={touched.reviewCount && Boolean(errors.reviewCount) ? errors.reviewCount : ''}
           />
           <TextField
-            label="Dining Style"
+            label="Dining Style (e.g Casual Dining)"
             id="diningStyle"
             type="text"
             value={formValues.diningStyle}
