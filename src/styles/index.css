@@ -1,0 +1,41 @@
+
+/**FONT & COLOR**/
+:root{
+  --fontFamily: 'Inter', sanserif;
+  --fontSizeTitle: 1.5rem;
+  --fontSizeLarge: 1.125rem;
+  --fontSizeBase: 1rem;
+  --fontSizeSmall: 0.875rem;
+  --fontSizeXtraSmall: 0.7rem;
+  --fontSizeHeader: 3rem;
+  --fontWeightSemiBold: 600;
+  --fontWeightMedium: 500;
+  --fontWeightNormal: 400;
+  --buttonRadius: 6px;
+  --buttonPadding:0.5rem 0.75rem;
+  --buttonColor:#3069FE;
+  --backgroundColor:white;
+  --textColorLight:white;
+  --textColorNormal:#0a2540;
+  --textHighlightColor:white;
+  --cardBackgroundColor:#E5ECFD;
+  --deleteIconColor:#3069FE;
+  --paginationBackgroundColor: white;
+  --paginationBackgroundSelectedColor: #3069FE;
+}
+/**DESKTOP**/
+* {
+  box-sizing: border-box;
+  font-family: var(--fontFamily);
+}
+
+body,
+h1,
+h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+::placeholder{
+  color: var(--textColorNormal);
+}

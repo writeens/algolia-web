@@ -1,0 +1,39 @@
+.navbar-container {
+    padding: 0.75rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+.navbar-logo {
+    width: 6rem;
+    height: 1.25rem;
+}
+.navbar-button{
+    border-radius: var(--buttonRadius);
+    padding: var(--buttonPadding);
+    background-color: var(--buttonColor);
+    color: var(--textColorLight);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar-plus {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar-container {
+        padding: 0.5rem;
+    }
+}
