@@ -1,6 +1,7 @@
 import algoliasearch from 'algoliasearch';
 import React, { useRef } from 'react';
 import { InstantSearch } from 'react-instantsearch-dom';
+import { ToastContainer } from 'react-toastify';
 import Banner from './components/Banner';
 import Filters from './components/Filters';
 import Navbar from './components/Navbar';
@@ -32,6 +33,7 @@ const App = () => {
           <Results />
         </main>
       </InstantSearch>
+      <ToastContainer />
     </div>
   );
 };

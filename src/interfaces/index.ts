@@ -70,3 +70,9 @@ export interface ITextFieldProps {
   onBlur:FocusEventHandler<HTMLInputElement>,
   error:string | undefined
 }
+
+export interface IToastContentProps {
+  title: string;
+  message: string;
+  type:'success' | 'error'
+}

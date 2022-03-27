@@ -1,0 +1,62 @@
+/**TOAST CSS**/
+.toast-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .toast-line {
+    border: 0.1px solid #ddd;
+  }
+  .toast-success-svg {
+    fill: #4BB543;
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+  .toast-error-svg {
+    fill: red;
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+  .toast-success {
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+  }
+  .Toastify__toast-body {
+    background: white;
+    border-radius: 0.3rem;
+  }
+  .Toastify__close-button {
+    top: 0.5rem;
+    right: 1.2rem;
+    position: relative;
+  }
+  .toast-error {
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+  }
+  .Toastify__toast-body{
+    padding: 0.5rem;
+  }
+  .toast-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    margin-left: 0.2rem;
+  }
+  .toast-message {
+    font-size: var(--fontSizeSmall);
+    font-weight: var(--fontWeightNormal);
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    .toast-message {
+      margin-top: 0.5rem;
+      font-size: var(--fontSizeSmall);
+    }
+  }

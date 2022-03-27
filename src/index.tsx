@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import 'react-toastify/dist/ReactToastify.css';
 import './styles/index.css';
 import './styles/components/Navbar.css';
 import './styles/components/Banner.css';
@@ -10,6 +11,7 @@ import './styles/components/RestaurantCardItem.css';
 import './styles/components/DeleteModal.css';
 import './styles/components/NewRestaurantModal.css';
 import './styles/components/EmptyState.css';
+import './styles/components/Notification.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
