@@ -4,17 +4,21 @@ import React, {
   ChangeEvent, FormEvent, useContext, useEffect, useState,
 } from 'react';
 import Modal from 'react-modal';
+import { addObject } from '../../api';
 import {
   CITIES, PAYMENT_OPTIONS, PRICES, STATES,
 } from '../../constants/strings';
+import { SearchContext } from '../../context/Search';
 import { newRestaurantSchema } from '../../helpers/schema';
-import { generateID } from '../../helpers/util';
+import { generateID, phoneRegExp } from '../../helpers/util';
 import { INewRestaurantModalProps, IRestaurantObject } from '../../interfaces';
+import { showError, showSuccess } from '../Notification';
 import SelectField from '../SelectField';
 import TextField from '../TextField';
 
 const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps) => {
   const [isAddingRestaurant, setIsAddingRestaurant] = useState(false);
+  const { updateRefresh } = useContext(SearchContext);
   const [stateOptions, setStateOptions] = useState([{ name: 'Please select a state', value: '' }]);
   const [cityOptions, setCityOptions] = useState([{ name: 'Please select a city', value: '' }]);
   const [spendOptions, setSpendOptions] = useState([{ name: 'How expensive is your restaurant', value: '' }]);
@@ -57,11 +61,70 @@ const NewRestaurantModal = ({ modalIsOpen, closeModal }:INewRestaurantModalProps
   };
 
   const handleSubmit = async (restaurantObject:IRestaurantObject) => {
+    updateRefresh(false);
+    setIsAddingRestaurant(true);
+    const isAdded = await addObject(restaurantObject);
+    setIsAddingRestaurant(false);
+    if (!isAdded) {
+      // HANDLE RESTAURANT COULD NOT BE ADDED
+      showError({
+        title: 'Sorry',
+        message: 'Looks like we were unable to add your restaurant. Please try again later.',
+      });
+      return;
+    }
+    updateRefresh(true);
+    showSuccess({
+      title: 'Hooray',
+      message: 'Your restaurant has been added successfully.',
+    });
     closeModal();
   };
 
   const preSubmit = async (e:FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
+    // SET ALL FIELDS TO A TOUCHED STATE
+    Object.keys(formValues).forEach((key) => setFieldTouched(key));
+
+    const formErrors = await validateForm();
+    const isValid = Object.values(formErrors).every((error) => error === '');
+    if (!isValid) {
+      return;
+    }
+
+    const objectID = generateID();
+
+    const object:IRestaurantObject = {
+      objectID,
+      name: formValues.name,
+      address: formValues.address,
+      area: formValues.city,
+      city: formValues.city,
+      country: 'US',
+      image_url: formValues.url || `https://www.opentable.com/img/restimages/${objectID}.jpg`,
+      mobile_reserve_url: `http://mobile.opentable.com/opentable/?restId=${objectID}`,
+      payment_options: formValues.paymentOptions,
+      phone: formValues.phone,
+      postal_code: formValues.postalCode,
+      price: formValues.spend,
+      reserve_url: `http://www.opentable.com/single.aspx?rid=${objectID}`,
+      state: formValues.state,
+      _geoloc: {
+        latitude: '37.090240',
+        longitude: '-122.39657',
+      },
+      food_type: formValues.foodType,
+      stars_count: formValues.starCount,
+      reviews_count: formValues.reviewCount,
+      neighborhood: formValues.city,
+      phone_number: formValues.phone.replace(phoneRegExp, '($1) $2-$3'),
+      price_range: `$${formValues.priceRange} and ${formValues.rangeOptions}`,
+      dining_style: formValues.diningStyle,
+      rounded_stars_count: formValues.starCount,
+    };
+
+    handleSubmit(object);
   };
 
   const handleModalClose = () => {

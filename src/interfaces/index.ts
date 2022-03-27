@@ -17,8 +17,8 @@ export interface IRestaurantObject {
     reserve_url:string,
     state:string,
     _geoloc:{
-      latitude:'37.090240',
-      longitude:'-122.39657'
+      latitude:'37.090240', // DEFAULT LATITUDE - ALGOLIA HQ
+      longitude:'-122.39657' // DEFAULT LONGITUDE - ALGOLIA HQ
     }
     food_type:string
     stars_count:number,
