@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Modal from 'react-modal';
 import { deleteObject } from '../../api';
+import { SearchContext } from '../../context/Search';
 import { IDeleteModalProps } from '../../interfaces';
 import { showError, showSuccess } from '../Notification';
 
@@ -8,12 +9,14 @@ const DeleteModal = ({
   name, objectId, modalIsOpen, closeModal,
 }:IDeleteModalProps) => {
   const [isDeleting, setIsDeleting] = useState(false);
+  const { updateRefresh } = useContext(SearchContext);
 
   const handleModalClose = () => {
     closeModal();
   };
 
   const handleDeleteRestaurant = async () => {
+    updateRefresh(false);
     setIsDeleting(true);
     const isDeleted = await deleteObject(objectId);
     setIsDeleting(false);
@@ -25,6 +28,7 @@ const DeleteModal = ({
       });
       return;
     }
+    updateRefresh(true);
     showSuccess({
       title: 'Hooray',
       message: 'Your restaurant has been removed successfully.',
