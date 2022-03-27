@@ -1,11 +1,12 @@
 import algoliasearch from 'algoliasearch';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { InstantSearch } from 'react-instantsearch-dom';
 import { ToastContainer } from 'react-toastify';
 import Banner from './components/Banner';
 import Filters from './components/Filters';
 import Navbar from './components/Navbar';
 import Results from './components/Results';
+import { SearchProvider } from './context/Search';
 
 const {
   REACT_APP_ALGOLIA_INDEX_NAME,
@@ -19,22 +20,26 @@ const searchClient = algoliasearch(
 
 const App = () => {
   const appContainerRef = useRef<HTMLDivElement>(null);
+  const [refresh, setRefresh] = useState(false);
 
   return (
-    <div ref={appContainerRef} className="app-container">
-      <Navbar />
-      <InstantSearch
-        searchClient={searchClient}
-        indexName={`${REACT_APP_ALGOLIA_INDEX_NAME}`}
-      >
-        <Banner />
-        <main className="main-container">
-          <Filters ref={appContainerRef} />
-          <Results />
-        </main>
-      </InstantSearch>
-      <ToastContainer />
-    </div>
+    <SearchProvider state={{ refresh, updateRefresh: setRefresh }}>
+      <div ref={appContainerRef} className="app-container">
+        <Navbar />
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={`${REACT_APP_ALGOLIA_INDEX_NAME}`}
+        >
+          <Banner />
+          <main className="main-container">
+            <Filters ref={appContainerRef} />
+            <Results />
+          </main>
+
+        </InstantSearch>
+        <ToastContainer />
+      </div>
+    </SearchProvider>
   );
 };
 

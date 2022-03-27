@@ -30,6 +30,7 @@
     background-color: white;
     border: 1px solid #ddd;
     margin-right: 0.8rem;
+    cursor: pointer;
 }
 .button-delete {
     border-radius: var(--buttonRadius);
@@ -38,4 +39,5 @@
     background-color: #ee243c;
     color: white;
     border: none;
+    cursor: pointer;
 }

@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { deleteObject } from '../../api';
 import { IDeleteModalProps } from '../../interfaces';
@@ -56,7 +55,7 @@ const DeleteModal = ({
       <div className="delete-modal-buttons">
         <button
           disabled={isDeleting}
-          className="modal-button button-cancel"
+          className="button-cancel"
           type="button"
           onClick={handleModalClose}
         >
@@ -64,7 +63,7 @@ const DeleteModal = ({
         </button>
         <button
           disabled={isDeleting}
-          className="modal-button button-delete"
+          className="button-delete"
           type="button"
           onClick={handleDeleteRestaurant}
         >

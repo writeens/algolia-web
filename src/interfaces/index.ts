@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
 export interface IRestaurantObject {
@@ -75,4 +76,9 @@ export interface IToastContentProps {
   title: string;
   message: string;
   type:'success' | 'error'
+}
+
+export interface ISearchContextInterface{
+  refresh:boolean
+  updateRefresh: (val:boolean) => void
 }
