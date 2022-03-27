@@ -1,0 +1,148 @@
+/**NEW RESTAURANT MODAL STYLES**/
+.add-modal-overlay {
+    display: flex;
+    justify-content: center;
+}
+
+.add-modal{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-height: 100%;
+}
+.add-modal-body{
+    margin-bottom: 1rem;
+    color: var(--textColorNormal);
+}
+.add-modal-desc{
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    margin-bottom: 0.5rem;
+}
+.add-modal-header{
+    margin-bottom: 0.5rem;
+}
+.add-modal-container{
+    display: flex;
+    flex-direction: column;
+    color: var(--textColorNormal);
+}
+
+.payment-type{
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    margin-bottom: 0.5rem;
+}
+.payment-type-checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem 1rem;
+    justify-content: center;
+    margin-top: 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 0.3rem;
+}
+.payment-type label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.range-section{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+.range-section-body{
+    display: flex;
+    align-items: center;
+}
+.range-section-body label{
+    display: flex;
+    flex: 1;
+}
+.range-section-body .form-select,
+.range-section-body .form-input{
+    flex: 1;
+}
+
+.range-section > span:first-child{
+    margin-bottom: 0.3rem;
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+}
+.range-section-dollar{
+    margin-right: 0.3rem;
+    margin-bottom: 0;
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+}
+.range-section-and{
+    margin: 0 0.3rem;
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+}
+
+
+/**INPUT & SELECT STYLES**/
+.select-label, .input-label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+.form-input, .form-select {
+    padding: 0.5rem;
+    border: 1px solid #DDDDDD;
+    border-radius: 0.3rem;
+    outline: none;
+    margin-bottom: 0.2rem;
+}
+.invalid-input, .invalid-select{
+    border: 1px solid red;
+}
+.input-label-text, 
+.select-label-text {
+    font-size: var(--fontSizeSmall);
+    font-weight:  var(--fontWeightNormal);
+    margin-bottom: 0.3rem;
+}
+.error-message{
+    color: red;
+    font-weight:  var(--fontWeightNormal);
+    font-size: 11px;
+}
+.add-modal-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end
+}
+.add-modal-button-container button[type="button"] {
+    border-radius: var(--buttonRadius);
+    padding: var(--buttonPadding);
+    color: var(--textColorNormal);
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-right: 0.8rem;
+}
+
+.add-modal-button-container button[type="submit"] {
+    border-radius: var(--buttonRadius);
+    padding: var(--buttonPadding);
+    color: var(--textColorLight);
+    background-color: var(--buttonColor);
+    color: white;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .add-modal{
+        width: 100%;
+    }
+    .payment-type-checkbox-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 640px){
+    .payment-type-checkbox-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

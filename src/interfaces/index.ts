@@ -1,3 +1,5 @@
+import { ChangeEventHandler, FocusEventHandler } from 'react';
+
 export interface IRestaurantObject {
     objectID:string,
     name:string,
@@ -32,4 +34,39 @@ export interface IDeleteModalProps {
     objectId:string,
     modalIsOpen: boolean
     closeModal:Function
+}
+
+export interface INewRestaurantModalProps {
+  modalIsOpen:boolean,
+  closeModal:Function,
+}
+
+export interface ISelectFieldProps {
+  selectClassName?:string,
+  labelClassName?:string,
+  containerClassName?:string,
+  id:string,
+  label:string,
+  required:boolean,
+  value: string | number
+  onChange:ChangeEventHandler<HTMLSelectElement>,
+  onBlur:FocusEventHandler<HTMLSelectElement>,
+  error:string | undefined
+  options:Array<{name:string, value:string | number}>
+}
+
+export interface ITextFieldProps {
+  inputClassName?:string,
+  labelClassName?:string,
+  containerClassName?:string,
+  id:string,
+  label:string,
+  type:string,
+  value: string | number,
+  required:boolean,
+  min?:number,
+  max?:number
+  onChange:ChangeEventHandler<HTMLInputElement>,
+  onBlur:FocusEventHandler<HTMLInputElement>,
+  error:string | undefined
 }
