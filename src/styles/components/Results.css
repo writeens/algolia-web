@@ -7,7 +7,6 @@
 .results-section__header {
     margin-bottom: 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 .results-section__header .ais-Stats-text {
@@ -66,6 +65,9 @@
 @media (max-width: 768px) {
     .results-section-content .ais-Hits-list {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .results-section__header {
+        align-items: center;
     }
 }
 

@@ -7,6 +7,7 @@ import Filters from './components/Filters';
 import Navbar from './components/Navbar';
 import Results from './components/Results';
 import { SearchProvider } from './context/Search';
+import { useURLSync } from './hooks/useURLSync';
 
 const {
   REACT_APP_ALGOLIA_INDEX_NAME,
@@ -21,6 +22,9 @@ const searchClient = algoliasearch(
 const App = () => {
   const appContainerRef = useRef<HTMLDivElement>(null);
   const [refresh, setRefresh] = useState(false);
+  const {
+    onSearchStateChange, createURL, searchState,
+  } = useURLSync();
 
   return (
     <SearchProvider state={{ refresh, updateRefresh: setRefresh }}>
@@ -29,6 +33,10 @@ const App = () => {
         <InstantSearch
           searchClient={searchClient}
           indexName={`${REACT_APP_ALGOLIA_INDEX_NAME}`}
+          onSearchStateChange={onSearchStateChange}
+          createURL={createURL}
+          searchState={searchState}
+          refresh={refresh}
         >
           <Banner />
           <main className="main-container">
